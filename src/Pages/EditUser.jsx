@@ -10,7 +10,7 @@ export const EditUser = () => {
   async function handleEdit(e) {
     e.preventDefault()
     const dataForm = new FormData(e.target)
-  
+
     await edit.mutateAsync(dataForm)
   }
 
@@ -21,9 +21,11 @@ export const EditUser = () => {
         (dataUser) && <>
           <form onSubmit={handleEdit} className='flex flex-col gap-4 w-[30%] px-10'>
 
-
-          {/*   <label htmlFor='photo'> Photo: </label>
-            <input className='border-2' id='photo' name='photo' defaultValue={dataUser.photo} type="photo"  /> */}
+            <div className="">
+            <img src={`http://localhost:3000/api/user/image/${dataUser?.photo}`} alt={dataUser?.name} width={80}/>
+              <label htmlFor='photo'> Photo: </label>
+              <input className='border-2' id='photo' name='photo' type="file" />
+            </div>
 
             <label htmlFor='name'> Name: </label>
             <input className='border-2' id='name' name='name' defaultValue={dataUser.name} type="name" required />
