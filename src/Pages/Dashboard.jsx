@@ -1,33 +1,31 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useContext } from "react";
+//import { infoUser } from "../services/DataService"
+import { Authcontext } from "../context/AuthContext";
+import { Link } from "react-router-dom";
+
 
 export const Dashboard = () => {
-    const [datos, setDatos] = useState({})
+   
+    const { dataUser, logout,isLoading } = useContext(Authcontext)
 
-    const data = async () => {
-        const info = await axios.get('http://localhost:3000/api/user/2')
-        console.log(info.data);
-        setDatos(info.data);
-
+    if (isLoading) {
+        return <div>Loading info...</div>
     }
-    useEffect(() => {
-        data()
-
-    }, [])
-
 
     return (
         <>
+            <Link to={'/edit'}>Edit</Link>
             {
-                (datos) &&
+                (dataUser) &&
                 <ul>
-                    <li>{datos.name}</li>
-                    <li>{datos.email}</li>
-                    <li>{datos.phone}</li>
-                    <li>{datos.biography}</li>
-                    <li>{datos.phono}</li>
+                    <li>name: {dataUser?.name}</li>
+                    <li>email: {dataUser?.email}</li>
+                    <li>phone: {dataUser?.phone}</li>
+                    <li>biography: {dataUser?.biography}</li>
+                    {/*   <li>photo: {data?.photo}</li> */}
                 </ul>
             }
+            <button onClick={logout}>Logout</button>
         </>
     )
 }
