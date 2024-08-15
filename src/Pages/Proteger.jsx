@@ -18,7 +18,7 @@ function Proteger() {
     }
 
     if (isError) {
-        return <Navigate to={'/'} />
+        return <Navigate to={'/login'} />
     }
     return <Outlet />
 
