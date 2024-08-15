@@ -6,8 +6,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 export const Authcontext = createContext()
 
 export const AuthProvider = ({ children }) => {
+    const [modal, setModal] = useState(false)
     const navigate = useNavigate()
-    const {pathname} = useLocation()
+    const { pathname } = useLocation()
     const [dataUser, setDataUser] = useState('')
 
     const regiterMutation = useMutation({
@@ -68,10 +69,14 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('id')
         setDataUser(null)
         navigate('/login')
+        setModal(false)
     }
 
+    function options() {
+        setModal(!modal)
+    }
     return (
-        <Authcontext.Provider value={{ regiterMutation, Login, dataUser, edit ,logout, isLoading, isError}}>
+        <Authcontext.Provider value={{ options, modal, regiterMutation, Login, dataUser, edit, logout, isLoading, isError }}>
             {children}
         </Authcontext.Provider>)
 }
