@@ -19,25 +19,25 @@ export const Register = () => {
   return (
     
 
-<main className='flex w-full h-screen justify-center items-center'>
+<main className='flex sm:w-full h-screen sm:h-screen justify-center items-center dark:bg-[#252329] dark:text-white'>
       
-        <section className='flex flex-col gap-4 border-2 p-8 rounded-3xl ' >
+        <section className='flex flex-col gap-4 sm:border-[1px] p-8 rounded-3xl ' >
           <figure className='px-6'>
-            <img src="/public/images/devchallenges.svg" alt="devchallenges" />
+            <img className='imgMode' src={"/public/images/devchallenges.svg"} alt="devchallenges" />
           </figure>
           <h2 className='w-[20rem] text-[18px] pl-6 font-semibold'>Join thousands of learnens from around the world</h2>
           <h2 className='w-[20rem] text-[14.5px] pl-6'>Master web development by making real-life projects.There are multiple paths for you to choose </h2>
 
           <form onSubmit={handleRegister} className='flex flex-col gap-4 w-full px-6'>
 
-            <section className='flex flex-row min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-2 rounded-md'>
+            <section className='flex flex-row min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-[1px] rounded-md'>
               <img src="/public/images/mail.svg" alt="mail" />
-              <input className=' outline-none' placeholder='Email' id='email' name='email' type="email" required />
+              <input className=' outline-none dark:bg-[#252329]' placeholder='Email' id='email' name='email' type="email" required />
             </section>
 
-            <section className='flex flex-row  min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-2 rounded-md'>
+            <section className='flex flex-row  min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-[1px] rounded-md'>
               <img src="/public/images/lock.svg" alt="lock" />
-              <input className=' outline-none' placeholder='Password' id='password' name='password' type="password" minLength={8} required />
+              <input className=' outline-none dark:bg-[#252329]' placeholder='Password' id='password' name='password' type="password" minLength={8} required />
             </section>
 
             <button className='bg-[#2F80ED]  font-semibold text-center  text-white rounded-md  min-w-[20rem] min-h-[2.5rem]' type='submit' >Star coding now</button>

@@ -17,24 +17,24 @@ export const Login = () => {
   }
 
   return (
-    <main className='flex w-full h-screen justify-center items-center'>
+    <main className='flex sm:w-full h-screen sm:h-screen justify-center items-center dark:bg-[#252329] dark:text-white'>
       
-        <section className='flex flex-col gap-4 border-2 p-8 rounded-3xl ' >
+        <section className='flex flex-col gap-4 sm:border-[1px] p-8 rounded-3xl ' >
           <figure className='px-6'>
-            <img src="/public/images/devchallenges.svg" alt="devchallenges" />
+          <img className='imgMode' src={"/public/images/devchallenges.svg"} alt="devchallenges" />
           </figure>
           <h2 className='px-6 font-semibold'>Login</h2>
 
           <form onSubmit={handleLogin} className='flex flex-col gap-4 w-full px-6'>
 
-            <section className='flex flex-row min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-2 rounded-md'>
+            <section className='flex flex-row min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-[1px] rounded-md'>
               <img src="/public/images/mail.svg" alt="mail" />
-              <input className=' outline-none' placeholder='Email' id='email' name='email' type="email" required />
+              <input className=' outline-none dark:bg-[#252329] ' placeholder='Email' id='email' name='email' type="email" required />
             </section>
 
-            <section className='flex flex-row  min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-2 rounded-md'>
+            <section className='flex flex-row  min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-[1px] rounded-md'>
               <img src="/public/images/lock.svg" alt="lock" />
-              <input className=' outline-none' placeholder='Password' id='password' name='password' type="password" required />
+              <input className=' outline-none dark:bg-[#252329]' placeholder='Password' id='password' name='password' type="password" required />
             </section>
 
             <button className='bg-[#2F80ED]  font-semibold text-center  text-white rounded-md  min-w-[20rem] min-h-[2.5rem]' type='submit' >Login</button>
