@@ -1,10 +1,11 @@
 import { useContext } from "react";
 //import { infoUser } from "../services/DataService"
 import { Authcontext } from "../context/AuthContext";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 
 export const Dashboard = () => {
+    const navigate = useNavigate()
 
     const { dataUser, logout, isLoading, isError,options,modal } = useContext(Authcontext)
 
@@ -21,7 +22,7 @@ export const Dashboard = () => {
                 <img className="imgMode" src="/public/images/devchallenges.svg" alt="devchallenges" />
 
                 <section className="flex flex-row gap-2">
-                    <img  className="rounded-lg" src={dataUser?.photo ? `http://localhost:3000/api/user/image/${dataUser.photo}`: '/images/avatar.png'} width={32} height={32} />
+                    <img  className="rounded-lg" src={dataUser?.photo ? `http://localhost:3000/api/user/image/${dataUser.photo}`: '/images/profile.svg'} width={32} height={32} />
                     <button onClick={options} className="flex flex-row items-center gap-2 font-semibold" >{dataUser?.name}<div className="w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-t-[7px] border-t-black dark:border-t-white"></div>
                     </button>
 
@@ -49,11 +50,11 @@ export const Dashboard = () => {
                             <h2 className="font-semibold  text-[1.5rem]">Profile</h2>
                             <span>Some info may be visible to other people</span>
                         </div>
-                        <button className="border-[1px] rounded-xl h-[2.4rem] w-[6rem]" ><Link className="w-full h-full" to={'/edit'}>Edit</Link> </button>
+                        <button className="border-[1px] rounded-xl h-[2.4rem] w-[6rem]" onClick={()=>{navigate('/edit')}} > Edit</button>
                     </section>
                     <figure className="border-b-[1px] px-12 flex flex-row justify-between sm:grid sm:grid-cols-[1fr_2fr] items-center py-4">
                         <h2 className="text-[#BDBDBD] text-[16px]">PHOTO</h2>
-                        <img className="rounded-lg" src={dataUser?.photo ? `http://localhost:3000/api/user/image/${dataUser.photo}`: '/images/avatar.png'} alt={dataUser?.name} width={72} height={72} />
+                        <img className="rounded-lg " src={dataUser?.photo ? `http://localhost:3000/api/user/image/${dataUser.photo}`: '/images/profile.svg'} alt={dataUser?.name} width={72} height={72} />
                     </figure>
                     <section className="border-b-[1px] px-12 flex flex-row justify-between sm:grid sm:grid-cols-[1fr_2fr] items-center py-6">
                         <h2 className="text-[#BDBDBD] text-[16px]">NAME</h2>

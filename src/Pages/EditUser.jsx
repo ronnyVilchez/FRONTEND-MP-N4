@@ -21,7 +21,7 @@ export const EditUser = () => {
           <img className="imgMode"  src="/public/images/devchallenges.svg" alt="devchallenges" />
 
           <section className="flex flex-row gap-2">
-            <img className="rounded-lg" src={dataUser?.photo ? `http://localhost:3000/api/user/image/${dataUser.photo}`: '/images/avatar.png'} alt={dataUser?.name} width={32} height={32} />
+            <img className="rounded-lg" src={dataUser?.photo ? `http://localhost:3000/api/user/image/${dataUser.photo}`: '/images/profile.svg'} alt={dataUser?.name} width={32} height={32} />
             <button onClick={options} className="flex flex-row items-center gap-2 font-semibold" >{dataUser?.name}<div className="w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-t-[7px] border-t-black dark:border-t-white"></div>
             </button>
 
@@ -54,29 +54,29 @@ export const EditUser = () => {
             <form onSubmit={handleEdit} className='flex flex-col  gap-4 '>
 
               <figure className="relative sm:px-12 flex flex-row items-center py-4 text-[#828282]">
-                <img className="absolute -z-1 sm:left-12 rounded-lg" src={dataUser?.photo ? `http://localhost:3000/api/user/image/${dataUser.photo}`: '/images/avatar.png'} alt={dataUser?.name} width={80} />
+                <img className="absolute -z-1 sm:left-12 rounded-lg" src={dataUser?.photo ? `http://localhost:3000/api/user/image/${dataUser.photo}`: '/images/profile.svg'} alt={dataUser?.name} width={80} />
                 <label className="flex z-0 pl-[1.7rem] flex-row items-center gap-8 cursor-pointer" htmlFor='photo'> <img src="/public/images/camera.svg" alt="camera" /> <span className="font-semibold">CHANGE PHOTO </span></label>
                 <input className='hidden' id='photo' name='photo' type="file" />
               </figure>
 
               <section className="sm:px-12 grid grid-rows items-center">
                 <label className="font-semibold" htmlFor='name'> Name: </label>
-                <input className='border-[1px] dark:bg-[#252329] px-4 max-w-[26.5rem] h-[3.25rem] border-[#828282] rounded-xl' id='name' placeholder="Enter your name..." name='name' defaultValue={dataUser.name} type="text" required />
+                <input className='border-[1px] dark:bg-[#252329] px-4 max-w-[26.5rem] h-[3.25rem] border-[#828282] rounded-xl' id='name' placeholder="Enter your name..." name='name' defaultValue={dataUser.name} type="text"  />
               </section>
 
               <section className="sm:px-12 grid grid-rows ">
                 <label className="font-semibold" htmlFor='biography'> Biography: </label>
-                <textarea className='flex border-[1px] px-4 py-2 max-w-[26.5rem] h-[5.75rem] border-[#828282] dark:bg-[#252329] rounded-xl' id='biography'  placeholder="Enter your bio..." name='biography' defaultValue={dataUser.biography} type="text" required />
+                <textarea className='flex border-[1px] px-4 py-2 max-w-[26.5rem] h-[5.75rem] border-[#828282] dark:bg-[#252329] rounded-xl' id='biography'  placeholder="Enter your bio..." name='biography' defaultValue={dataUser.biography} type="text"  />
               </section>
 
               <section className="sm:px-12 grid grid-rows items-center">
                 <label className="font-semibold" htmlFor='phone'> Phone: </label>
-                <input className='border-[1px] dark:bg-[#252329] px-4 max-w-[26.5rem]  h-[3.25rem] border-[#828282] rounded-xl' id='phone'  placeholder="Enter your phone..." name='phone' defaultValue={dataUser.phone} type="text" required />
+                <input className='border-[1px] dark:bg-[#252329] px-4 max-w-[26.5rem]  h-[3.25rem] border-[#828282] rounded-xl' id='phone'  placeholder="Enter your phone..." name='phone' defaultValue={dataUser.phone} type="text"  />
               </section>
 
               <section className="sm:px-12 grid grid-rows items-center">
                 <label className="font-semibold" htmlFor='email'> Email: </label>
-                <input className='border-[1px] dark:bg-[#252329] px-4 max-w-[26.5rem]  h-[3.25rem] border-[#828282] rounded-xl' id='email'  placeholder="Enter your email..." name='email' defaultValue={dataUser.email} type="email" required />
+                <input className='border-[1px] dark:bg-[#252329] px-4 max-w-[26.5rem]  h-[3.25rem] border-[#828282] rounded-xl' id='email'  placeholder="Enter your email..." name='email' defaultValue={dataUser.email} type="email"  />
               </section>
 
               <section className="sm:px-12 grid grid-rows items-center">

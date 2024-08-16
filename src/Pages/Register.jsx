@@ -30,14 +30,14 @@ export const Register = () => {
 
           <form onSubmit={handleRegister} className='flex flex-col gap-4 w-full px-6'>
 
-            <section className='flex flex-row min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-[1px] rounded-md'>
+            <section className='flex flex-row min-w-[20rem] min-h-[3rem] gap-4 pl-4 pr-6 items-center border-[1px] rounded-md'>
               <img src="/public/images/mail.svg" alt="mail" />
-              <input className=' outline-none dark:bg-[#252329]' placeholder='Email' id='email' name='email' type="email" required />
+              <input className='w-full outline-none dark:bg-[#252329]' placeholder='Email' id='email' name='email' type="email" required />
             </section>
 
-            <section className='flex flex-row  min-w-[20rem] min-h-[3rem] gap-4 px-4 items-center border-[1px] rounded-md'>
+            <section className='flex flex-row  min-w-[20rem] min-h-[3rem] gap-4 pl-4 pr-6 items-center border-[1px] rounded-md'>
               <img src="/public/images/lock.svg" alt="lock" />
-              <input className=' outline-none dark:bg-[#252329]' placeholder='Password' id='password' name='password' type="password" minLength={8} required />
+              <input className='w-full outline-none dark:bg-[#252329]' placeholder='Password' id='password' name='password' type="password"  pattern="(?=.*[A-Z]).{8,}" title="Ingrese al menos 8 caracteres y una letra mayúscula" required />
             </section>
 
             <button className='bg-[#2F80ED]  font-semibold text-center  text-white rounded-md  min-w-[20rem] min-h-[2.5rem]' type='submit' >Star coding now</button>
