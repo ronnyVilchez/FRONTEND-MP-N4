@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .imgMode {
-    content: url('/public/images/devchallenges.svg');
+    content: url('/images/devchallenges.svg');
 }
 
 @media (prefers-color-scheme: dark) {
     .imgMode {
-        content: url('/public/images/devchallenges-light.svg');
+        content: url('/images/devchallenges-light.svg');
     }
 }

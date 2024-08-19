@@ -1,4 +1,3 @@
-import { data } from "autoprefixer"
 import axios from "axios"
 
 export const registerUser = async (data) => {
@@ -26,9 +25,3 @@ export const editUser = async (dataForm) => {
     console.log(user.data);
     return user.data
 }
-
-
-/* export const infoUser = async (id) => {
-  const info =  await axios.get(`http://localhost:3000/api/user/${id}`)
-   return info
-} */

@@ -1,5 +1,4 @@
 import { useContext } from "react";
-//import { infoUser } from "../services/DataService"
 import { Authcontext } from "../context/AuthContext";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
@@ -29,11 +28,11 @@ export const Dashboard = () => {
                     <section className={`${!modal?'hidden':''} absolute flex flex-col top-10 right-10 bg-white border-[1px] w-[9rem] p-4 gap-4 rounded-xl dark:bg-[#88868d] text-[#272626]`}>
 
                         <button className="bg-white dark:bg-[#88868d]  text-[12px] p-2 hover:bg-[#F2F2F2] rounded-lg flex flex-row gap-2 items-center">
-                            <img src="/public/images/user.svg" alt="user" /> <span>My Profile</span></button>
+                            <img src="/images/user.svg" alt="user" /> <span>My Profile</span></button>
 
-                        <button className="bg-white dark:bg-[#88868d]  text-[12px] p-2 hover:bg-[#F2F2F2] rounded-lg flex flex-row gap-2 items-center"><img src="/public/images/group.svg" alt="user" />
+                        <button className="bg-white dark:bg-[#88868d]  text-[12px] p-2 hover:bg-[#F2F2F2] rounded-lg flex flex-row gap-2 items-center"><img src="/images/group.svg" alt="user" />
                            <span>Group Chat</span> </button>
-                        <button onClick={logout} className="bg-white dark:bg-[#88868d]  text-[12px] p-2 hover:bg-[#F2F2F2] rounded-lg flex flex-row gap-2 items-center"><img src="/public/images/logout.svg" alt="user" />
+                        <button onClick={logout} className="bg-white dark:bg-[#88868d]  text-[12px] p-2 hover:bg-[#F2F2F2] rounded-lg flex flex-row gap-2 items-center"><img src="/images/logout.svg" alt="user" />
                            <span>Logout</span> </button>
 
                     </section>

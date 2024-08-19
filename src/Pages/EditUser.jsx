@@ -1,5 +1,4 @@
 import { useContext } from "react";
-//import { infoUser } from "../services/dataUserService"
 import { Authcontext } from "../context/AuthContext";
 import { Link, useNavigate} from "react-router-dom";
 
@@ -18,7 +17,7 @@ export const EditUser = () => {
   return (
       <main className="relative w-full h-screen p-4 dark:bg-[#252329] dark:text-white ">
         <nav className="absolute flex flex-row justify-between px-8 left-0 right-0">
-          <img className="imgMode"  src="/public/images/devchallenges.svg" alt="devchallenges" />
+          <img className="imgMode"  src="/images/devchallenges.svg" alt="devchallenges" />
 
           <section className="flex flex-row gap-2">
             <img className="rounded-lg" src={dataUser?.photo ? `http://localhost:3000/api/user/image/${dataUser.photo}`: '/images/profile.svg'} alt={dataUser?.name} width={32} height={32} />
@@ -28,11 +27,11 @@ export const EditUser = () => {
             <section className={`${!modal ? 'hidden' : ''} absolute flex flex-col top-10 right-10 bg-white border-[1px] w-[9rem] p-4 gap-4 rounded-xl dark:bg-[#88868d] text-[#272626]`}>
 
               <button onClick={()=>{navigate('/dashboard')}}className="bg-white  dark:bg-[#88868d] text-[12px] p-2 hover:bg-[#F2F2F2] rounded-lg flex flex-row gap-2 items-center">
-                <img src="/public/images/user.svg" alt="user" /> <span>My Profile</span></button>
+                <img src="/images/user.svg" alt="user" /> <span>My Profile</span></button>
 
               <button className="bg-white dark:bg-[#88868d]  text-[12px] p-2 hover:bg-[#F2F2F2] rounded-lg flex flex-row gap-2 items-center"><img src="/public/images/group.svg" alt="user" />
                 <span>Group Chat</span> </button>
-              <button onClick={logout} className="bg-white dark:bg-[#88868d]  text-[12px] p-2 hover:bg-[#F2F2F2] rounded-lg flex flex-row gap-2 items-center"><img src="/public/images/logout.svg" alt="user" />
+              <button onClick={logout} className="bg-white dark:bg-[#88868d]  text-[12px] p-2 hover:bg-[#F2F2F2] rounded-lg flex flex-row gap-2 items-center"><img src="/images/logout.svg" alt="user" />
                 <span>Logout</span> </button>
 
             </section>

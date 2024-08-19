@@ -80,23 +80,3 @@ export const AuthProvider = ({ children }) => {
             {children}
         </Authcontext.Provider>)
 }
-
-/* const infoDashboard = useMutation({
-     mutationKey: ['info'],
-     mutationFn: infoUser,
-     onError: data => alert(data.response.data.message),
-     onSuccess: ({ data }) => {
-         console.log(data.message)
-         setData(data)
-        // navigate('/dashboard')
-     }
- })
-*/
-/*   const infoDashboard = () => {
-   const { data, error, isLoading } = useQuery([user], () => fetchUser(infoUser));
- console.log(data);} */
-/* const {} = useQuery({
-    queryKey:['user'],
-    queryFn: ,
-
-}) */
